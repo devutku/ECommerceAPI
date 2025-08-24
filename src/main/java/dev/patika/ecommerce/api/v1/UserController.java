@@ -40,6 +40,7 @@ public class UserController {
     public String userEndpoint(){
         return "This is your password.";
     }
+
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/getadminpassword")
     @ResponseStatus(HttpStatus.OK)
