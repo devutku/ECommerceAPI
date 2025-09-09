@@ -44,6 +44,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(authorizeRequests ->
                 authorizeRequests.requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers("v1/users/signin").permitAll()
+                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll() // allow swagger
                         .anyRequest().authenticated());
         http.sessionManagement(
                 session ->
